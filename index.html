@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playwrite+HR:wght@100..400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        /* width: 800px; */
+        margin: 20px auto;
+        min-height: calc(100vh - 40px);
+        font-family: Arial, Helvetica, sans-serif;
+        /* background-color: #143543; */
+        background-image: linear-gradient(#143543, #e1e1e1);
+        background-repeat: no-repeat;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .container {
+        padding: 15px 0;
+        margin: 0 auto;
+      }
+      @media (min-width: 768px) {
+        .container {
+          width: 750px;
+        }
+      }
+      @media (min-width: 992px) {
+        .container {
+          width: 970px;
+        }
+      }
+      @media (min-width: 1200px) {
+        .container {
+          width: 1170px;
+        }
+      }
+      h1 {
+        text-align: center;
+        margin-top: -50px;
+        color: #fff;
+        font-size: 40px;
+      }
+      h1 span {
+        font-size: 30px;
+        display: block;
+        margin-bottom: 10px;
+        font-family: "Playwrite HR", cursive;
+        letter-spacing: 3px;
+      }
+      .form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .task-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 70%;
+      }
+      .btn {
+        padding: 15px 16px;
+        border: none;
+        border-radius: 3px;
+        color: #fff;
+        cursor: pointer;
+        box-sizing: border-box;
+        transition: 0.3s ease-out;
+        border-radius: 20px;
+      }
+      .delete {
+        background-color: rgb(232, 55, 55);
+        padding: 7px 10px;
+      }
+      .delete:hover {
+        background-color: #f00;
+      }
+      .add {
+        background-color: #eee;
+        color: #000;
+        border-radius: 0 20px 20px 0;
+      }
+      .add:hover {
+        background-color: #fff;
+      }
+      .done {
+        background-color: #143543;
+        padding: 7px 10px;
+      }
+      .task-input {
+        /* max-width: 100%; */
+        border: none;
+        width: 600px;
+        padding: 15px 16px;
+        border-radius: 20px 0 0 20px;
+        background-color: #000;
+        color: #e1e1e1;
+      }
+
+      @media (max-width: 767px) {
+        .task-input {
+          width: 80%;
+        }
+        .form {
+          padding: 0 20px;
+        }
+        .date {
+          font-size: 14px;
+          line-height: 1.7;
+        }
+        .task-buttons {
+          gap: 10px;
+        }
+        .time {
+          display: none;
+        }
+        .task-content {
+          width: 85%;
+        }
+      }
+      .task-content {
+        margin: 30px 0 0 0;
+        background-color: #000;
+        border-radius: 4px;
+        padding: 5px 10px;
+      }
+      .task-content p {
+        color: #fff;
+        white-space: nowrap;
+        overflow: hidden;
+        /* text-overflow: ellipsis;  already added it using js*/
+        max-width: 150px;
+        flex: 1; /*to make the layout the same for each task*/
+      }
+      .line {
+        text-decoration: line-through;
+        color: #999 !important;
+      }
+      input:focus {
+        outline: none;
+      }
+      .task-buttons {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .blured {
+        background-color: #000;
+        opacity: 0.2;
+      }
+      .cursor {
+        cursor: not-allowed;
+      }
+      .date {
+        display: block;
+        text-align: center;
+        margin: 10px 0 30px 0;
+        color: whitesmoke;
+      }
+      .time {
+        color: whitesmoke;
+        font-weight: 100;
+      }
+    </style>
+    <link rel="stylesheet" href="toast.css" />
+    <script
+      src="https://kit.fontawesome.com/9f9aff05b4.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1><span>Your Todo's</span> Just do it.</h1>
+      <span class="date"></span>
+      <div class="form">
+        <input
+          type="text"
+          placeholder="Add a task"
+          class="task-input"
+          value=""
+        />
+        <input type="submit" value="I Got This!" class="btn add" />
+      </div>
+    </div>
+
+    <script src="toast.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
